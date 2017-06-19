@@ -169,8 +169,7 @@ const GoogleSheetInput = function () {
 
             plotLogo(content);
 
-            var bannerText = '<h1>Build your own radar</h1><p>Once you\'ve <a href ="https://info.thoughtworks.com/visualize-your-tech-strategy.html">created your Radar</a>, you can use this service' +
-                ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://info.thoughtworks.com/visualize-your-tech-strategy-guide.html">Read this first.</a></p>';
+            var bannerText = '<h1>Build your own radar</h1><p>Inspired by ThoughtWorks <a href ="https://info.thoughtworks.com/visualize-your-tech-strategy.html">created your Radar</a></p>';
 
             plotBanner(content, bannerText);
 
@@ -191,7 +190,7 @@ function set_document_title() {
 function plotLogo(content) {
     content.append('div')
         .attr('class', 'input-sheet__logo')
-        .html('<a href="https://www.thoughtworks.com"><img src="/images/tw-logo.png" / ></a>');
+        .html('<a href="https://www.computacenter.com"><img src="/images/Computacenter_marque_rgb.png" / ></a>');
 }
 
 function plotFooter(content) {
@@ -201,10 +200,7 @@ function plotFooter(content) {
         .append('div')
         .attr('class', 'footer-content')
         .append('p')
-        .html('Powered by <a href="https://www.thoughtworks.com"> ThoughtWorks</a>. '
-        + 'By using this service you agree to <a href="https://info.thoughtworks.com/visualize-your-tech-strategy-terms-of-service.html">ThoughtWorks\' terms of use</a>. '
-        + 'You also agree to our <a href="https://www.thoughtworks.com/privacy-policy">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Google Sheet. '
-        + 'This software is <a href="https://github.com/thoughtworks/build-your-own-radar">open source</a> and available for download and self-hosting.');
+        .html('This software is <a href="https://github.com/christianschreiner/build-your-own-radar">open source</a> and available for download and self-hosting.');
 
 
 
@@ -237,7 +233,7 @@ function plotForm(content) {
         .attr('class', 'button')
         .text('Build my radar');
 
-    form.append('p').html("<a href='https://info.thoughtworks.com/visualize-your-tech-strategy-guide.html#faq'>Need help?</a>");
+    
 }
 
 module.exports = GoogleSheetInput;
