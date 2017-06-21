@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "istanbul cover jasmine",
-    "dev": "webpack-dev-server --dev --inline --public 192.168.99.100:8080",
+    "dev": "webpack-dev-server --dev --inline",
     "build": "webpack --prod",
     "examples:clean": "rm -rf examples/",
     "examples:copy": "mkdir examples && cp -r dist/* examples",
