@@ -93,7 +93,7 @@ const GoogleSheet = function (sheetReference, sheetName) {
                 var quadrants = {};
                 _.each(blips, function (blip) {
                     if (!quadrants[blip.quadrant]) {
-                        quadrants[blip.quadrant] = new Quadrant(_.capitalize(blip.quadrant));
+                        quadrants[blip.quadrant] = new Quadrant(blip.quadrant);
                     }
                     quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.isNew.toLowerCase() === 'true', blip.topic, blip.description))
                 });
