@@ -452,10 +452,7 @@ const Radar = function (size, radar) {
       .append('div')
       .attr('class', 'footer-content')
       .append('p')
-<<<<<<< HEAD
       .html('This software is <a href="https://github.com/christianschreiner/build-your-own-radar">open source</a> and available for download and self-hosting.');
-=======
->>>>>>> upstream/master
   }
 
   function mouseoverQuadrant(order) {
