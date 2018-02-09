@@ -85,41 +85,7 @@ const GoogleSheet = function (sheetReference, sheetName) {
                 var all = tabletop.sheets(sheetName).all();
                 var blips = _.map(all, new InputSanitizer().sanitize);
 
-<<<<<<< HEAD
-                document.title = tabletop.googleSheetName;
-                d3.selectAll(".loading").remove();
-
-                var rings = _.map(_.uniqBy(blips, 'ring'), 'ring');
-                var ringMap = {};
-                var maxRings = 4;
-
-                _.each(rings, function (ringName, i) {
-                    if (i == maxRings) {
-                        throw new MalformedDataError(ExceptionMessages.TOO_MANY_RINGS);
-                    }
-                    ringMap[ringName] = new Ring(ringName, i);
-                });
-
-                var quadrants = {};
-                _.each(blips, function (blip) {
-                    if (!quadrants[blip.quadrant]) {
-                        quadrants[blip.quadrant] = new Quadrant(blip.quadrant);
-                    }
-                    quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.isNew.toLowerCase() === 'true', blip.topic, blip.description))
-                });
-
-                var radar = new Radar();
-                _.each(quadrants, function (quadrant) {
-                    radar.addQuadrant(quadrant)
-                });
-
-                var size = (window.innerHeight - 133) < 620 ? 620 : window.innerHeight - 133;
-
-                new GraphingRadar(size, radar).init().plot();
-
-=======
                 plotRadar(tabletop.googleSheetName, blips);
->>>>>>> upstream/master
             } catch (exception) {
                 plotErrorMessage(exception);
             }
@@ -220,9 +186,7 @@ const GoogleSheetInput = function () {
 
             plotLogo(content);
 
-<<<<<<< HEAD
             var bannerText = '<h1>Build your own radar</h1><p>Inspired by ThoughtWorks <a href ="https://info.thoughtworks.com/visualize-your-tech-strategy.html">created your Radar</a></p>';
->>>>>>> upstream/master
 
             plotBanner(content, bannerText);
 
@@ -269,10 +233,7 @@ function plotFooter(content) {
         .append('div')
         .attr('class', 'footer-content')
         .append('p')
-<<<<<<< HEAD
         .html('This software is <a href="https://github.com/christianschreiner/build-your-own-radar">open source</a> and available for download and self-hosting.');
-=======
->>>>>>> upstream/master
 
 
 
@@ -306,9 +267,6 @@ function plotForm(content) {
         .attr('class', 'button')
         .text('Build my radar');
 
-<<<<<<< HEAD
-    
-=======
     form.append('p').html("<a href='https://www.thoughtworks.com/radar/how-to-byor'>Need help?</a>");
 }
 
@@ -333,7 +291,6 @@ function plotErrorMessage(exception) {
         .attr('class', 'error-container__message')
         .append('p')
         .html(message);
->>>>>>> upstream/master
 }
 
 module.exports = GoogleSheetInput;
