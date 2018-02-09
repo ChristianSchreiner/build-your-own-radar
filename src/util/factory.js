@@ -90,7 +90,7 @@ const GoogleSheet = function (sheetReference, sheetName) {
                 plotErrorMessage(exception);
             }
         }
-    };
+    }; 
 
     self.init = function () {
         plotLoading();
